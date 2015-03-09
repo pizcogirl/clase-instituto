@@ -27,7 +27,7 @@ public class Alumno
      * @param Nombre El nombre del alumno
      * @param Edad La edad del alumno
      */
-    public Alumno()
+    public Alumno(String nombre, int edad)
     {
         // Inicializamos los atributos
         this.nombre = nombre;
@@ -68,7 +68,17 @@ public class Alumno
      */
     public boolean aprobado()
     {
-        return (notaMedia() > NOTA_APROBADO);
+        return (notaMedia() >= NOTA_APROBADO);
+    }
+    
+    /**
+     * Imprime por pantalla la información del alumno
+     * @return Una string con la información del alumno
+     */
+    public String toString()
+    {
+        String info = "Nombre: " + nombre + "\nEdad: " + edad + "\nNumero de clase: " + numeroClase +  "\nNota media: " + notaMedia() + " Aprobado: " + aprobado();
+        return info;
     }
 
 }
