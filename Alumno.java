@@ -12,7 +12,7 @@ public class Alumno
     public static final int NOTA_APROBADO = 5;
     // Numero de alumnos en clase, para asignar
     public static int numAlumnosClase = 0;
-    
+
     // Nombre del alumno
     private String nombre;
     // Edad del alumno
@@ -36,6 +36,39 @@ public class Alumno
         // Aumentamos el numero de alumnos en clase
         numAlumnosClase += 1;
         notas = new ArrayListInt();
+    }
+
+    /**
+     * Añade notas al alumno
+     * @param Nota Nota a añadir
+     */
+    public void addNota(int nota)
+    {
+        notas.add(nota);
+    }
+
+    /**
+     * Devuelve la media de las notas del alumno
+     * @return La media de las notas del alumno
+     */
+    public int notaMedia()
+    {
+        int sumatorio = 0;
+        // Sumamos todos los elementos del array
+        for(int i = 0; i < notas.size(); i++){
+            sumatorio += notas.get(i);
+        }
+        // Devolvemos la media
+        return (sumatorio/notas.size());
+    }
+    
+    /**
+     * Devuelve si el alumno esta o no aprobado
+     * @return True si esta aprobado, false si no
+     */
+    public boolean aprobado()
+    {
+        return (notaMedia() > NOTA_APROBADO);
     }
 
 }
