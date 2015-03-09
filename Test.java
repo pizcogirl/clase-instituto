@@ -36,7 +36,7 @@ public class Test
      */
     public Alumno generaAlumno()
     {
-        Random rnd = new Random(System.currentTimeMillis());
+        Random rnd = new Random();
         String nombre = nombres[rnd.nextInt(5)];
         int edad = rnd.nextInt(10) + 15;
         Alumno alumno = new Alumno(nombre, edad);
